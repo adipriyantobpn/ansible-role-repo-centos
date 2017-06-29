@@ -1,0 +1,7 @@
+---
+centos_base_baseurl:              http://mirror.centos.org/centos/$releasever/os/$basearch/
+centos_updates_baseurl:           http://mirror.centos.org/centos/$releasever/updates/$basearch/
+centos_extras_baseurl:            http://mirror.centos.org/centos/$releasever/extras/$basearch/
+centos_centosplus_baseurl:        http://mirror.centos.org/centos/$releasever/centosplus/$basearch/
+centos_cr_baseurl:                http://mirror.centos.org/centos/$releasever/cr/$basearch/
+centos_fasttrack_baseurl:         http://mirror.centos.org/centos/$releasever/fasttrack/$basearch/

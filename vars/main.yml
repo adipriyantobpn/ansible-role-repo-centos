@@ -1,2 +1,3 @@
 ---
 # vars file for adipriyantobpn.repo-centos
+centos_gpgkey_url: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$releasever

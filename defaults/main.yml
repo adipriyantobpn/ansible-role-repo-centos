@@ -1,2 +1,9 @@
 ---
 # defaults file for adipriyantobpn.repo-centos
+repo_location:              indonesia   # available options: international, indonesia, vagrant
+centos_base_enabled:        yes
+centos_updates_enabled:     yes
+centos_extras_enabled:      yes
+centos_centosplus_enabled:  yes
+centos_cr_enabled:          no
+centos_fasttrack_enabled:   no
