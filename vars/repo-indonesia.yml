@@ -1,7 +1,29 @@
 ---
-centos_base_baseurl:              "http://sumberterbuka.beritagar.id/centos/$releasever/os/$basearch/"
-centos_updates_baseurl:           "http://sumberterbuka.beritagar.id/centos/$releasever/updates/$basearch/"
-centos_extras_baseurl:            "http://sumberterbuka.beritagar.id/centos/$releasever/extras/$basearch/"
-centos_centosplus_baseurl:        "http://sumberterbuka.beritagar.id/centos/$releasever/centosplus/$basearch/"
-centos_cr_baseurl:                "http://sumberterbuka.beritagar.id/centos/$releasever/cr/$basearch/"
-centos_fasttrack_baseurl:         "http://sumberterbuka.beritagar.id/centos/$releasever/fasttrack/$basearch/"
+# yum variables can be checked using this command:
+#   $ python -c 'import yum, pprint; yb = yum.YumBase(); pprint.pprint(yb.conf.yumvar, width=1)'
+
+centos_repo:
+  Base:
+    file: CentOS-Base
+    enabled: "{{ centos_base_enabled }}"
+    baseurl: "http://sumberterbuka.beritagar.id/centos/$releasever/os/$basearch/"
+  Updates:
+    file: CentOS-Base
+    enabled: "{{ centos_updates_enabled }}"
+    baseurl: "http://sumberterbuka.beritagar.id/centos/$releasever/updates/$basearch/"
+  Extras:
+    file: CentOS-Base
+    enabled: "{{ centos_extras_enabled }}"
+    baseurl: "http://sumberterbuka.beritagar.id/centos/$releasever/extras/$basearch/"
+  CentosPlus:
+    file: CentOS-Base
+    enabled: "{{ centos_centosplus_enabled }}"
+    baseurl: "http://sumberterbuka.beritagar.id/centos/$releasever/centosplus/$basearch/"
+  CR:
+    file: CentOS-CR
+    enabled: "{{ centos_cr_enabled }}"
+    baseurl: "http://sumberterbuka.beritagar.id/centos/$releasever/cr/$basearch/"
+  Fasttrack:
+    file: CentOS-fasttrack
+    enabled: "{{ centos_fasttrack_enabled }}"
+    baseurl: "http://sumberterbuka.beritagar.id/centos/$releasever/fasttrack/$basearch/"

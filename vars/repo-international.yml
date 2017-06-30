@@ -1,9 +1,29 @@
 ---
 # yum variables can be checked using this command:
 #   $ python -c 'import yum, pprint; yb = yum.YumBase(); pprint.pprint(yb.conf.yumvar, width=1)'
-centos_base_mirrorlist:           "http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra"
-centos_updates_mirrorlist:        "http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates&infra=$infra"
-centos_extras_mirrorlist:         "http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras&infra=$infra"
-centos_centosplus_mirrorlist:     "http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus&infra=$infra"
-centos_cr_baseurl:                "http://mirror.centos.org/centos/$releasever/cr/$basearch/"
-centos_fasttrack_mirrorlist:      "http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=fasttrack&infra=$infra"
+
+centos_repo:
+  Base:
+    file: CentOS-Base
+    enabled: "{{ centos_base_enabled }}"
+    mirrorlist: "http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra"
+  Updates:
+    file: CentOS-Base
+    enabled: "{{ centos_updates_enabled }}"
+    mirrorlist: "http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates&infra=$infra"
+  Extras:
+    file: CentOS-Base
+    enabled: "{{ centos_extras_enabled }}"
+    mirrorlist: "http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras&infra=$infra"
+  CentosPlus:
+    file: CentOS-Base
+    enabled: "{{ centos_centosplus_enabled }}"
+    mirrorlist: "http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus&infra=$infra"
+  CR:
+    file: CentOS-CR
+    enabled: "{{ centos_cr_enabled }}"
+    baseurl: "http://mirror.centos.org/centos/$releasever/cr/$basearch/"
+  Fasttrack:
+    file: CentOS-fasttrack
+    enabled: "{{ centos_fasttrack_enabled }}"
+    mirrorlist: "http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=fasttrack&infra=$infra"

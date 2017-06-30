@@ -5,21 +5,15 @@
 
 - name: configure CentOS yum repository
   yum_repository:
-    name: "{{ item.name.lower() }}"
-    description: "CentOS-$releasever - {{ item.name }}"
-    mirrorlist: "{{ item.mirrorlist | default(omit) }}"
+    name: "{{ item.key.lower() }}"
+    description: "CentOS-$releasever - {{ item.key }}"
+    mirrorlist: "{{ item.value.mirrorlist | default(omit) }}"
     failovermethod: priority
-    baseurl: "{{ item.baseurl | default(omit) }}"
+    baseurl: "{{ item.value.baseurl | default(omit) }}"
     gpgkey: "{{ centos_gpgkey_url }}"
     gpgcheck: yes
-    enabled: "{{ item.enabled }}"
-    file: "{{ item.file }}"
+    enabled: "{{ item.value.enabled }}"
+    file: "{{ item.value.file }}"
     state: present
   become: True
-  with_items:
-    - { name: Base        ,file: "CentOS-Base"      ,enabled: "{{ centos_base_enabled }}"         ,baseurl: "{{ centos_base_baseurl | default(omit) }}"         ,mirrorlist: "{{ centos_base_mirrorlist | default(omit) }}" }
-    - { name: Updates     ,file: "CentOS-Base"      ,enabled: "{{ centos_updates_enabled }}"      ,baseurl: "{{ centos_updates_baseurl | default(omit) }}"      ,mirrorlist: "{{ centos_updates_mirrorlist | default(omit) }}" }
-    - { name: Extras      ,file: "CentOS-Base"      ,enabled: "{{ centos_extras_enabled }}"       ,baseurl: "{{ centos_extras_baseurl | default(omit) }}"       ,mirrorlist: "{{ centos_extras_mirrorlist | default(omit) }}" }
-    - { name: CentosPlus  ,file: "CentOS-Base"      ,enabled: "{{ centos_centosplus_enabled }}"   ,baseurl: "{{ centos_centosplus_baseurl | default(omit) }}"   ,mirrorlist: "{{ centos_centosplus_mirrorlist | default(omit) }}" }
-    - { name: CR          ,file: "CentOS-CR"        ,enabled: "{{ centos_cr_enabled }}"           ,baseurl: "{{ centos_cr_baseurl | default(omit) }}"           ,mirrorlist: "{{ centos_cr_mirrorlist | default(omit) }}" }
-    - { name: Fasttrack   ,file: "CentOS-fasttrack" ,enabled: "{{ centos_fasttrack_enabled }}"    ,baseurl: "{{ centos_fasttrack_baseurl | default(omit) }}"    ,mirrorlist: "{{ centos_fasttrack_mirrorlist | default(omit) }}" }
+  with_dict: "{{ centos_repo }}"

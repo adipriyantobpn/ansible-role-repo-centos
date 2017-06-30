@@ -1,7 +1,29 @@
 ---
-centos_base_baseurl:              "file:///vagrant/repo/base/"
-centos_updates_baseurl:           "file:///vagrant/repo/updates/"
-centos_extras_baseurl:            "file:///vagrant/repo/extras/"
-centos_centosplus_baseurl:        "file:///vagrant/repo/centosplus/"
-centos_cr_baseurl:                "http://sumberterbuka.beritagar.id/centos/$releasever/cr/$basearch/"
-centos_fasttrack_baseurl:         "http://sumberterbuka.beritagar.id/centos/$releasever/fasttrack/$basearch/"
+# yum variables can be checked using this command:
+#   $ python -c 'import yum, pprint; yb = yum.YumBase(); pprint.pprint(yb.conf.yumvar, width=1)'
+
+centos_repo:
+  Base:
+    file: CentOS-Base
+    enabled: "{{ centos_base_enabled }}"
+    baseurl: "file:///vagrant/repo/base/"
+  Updates:
+    file: CentOS-Base
+    enabled: "{{ centos_updates_enabled }}"
+    baseurl: "file:///vagrant/repo/updates/"
+  Extras:
+    file: CentOS-Base
+    enabled: "{{ centos_extras_enabled }}"
+    baseurl: "file:///vagrant/repo/extras/"
+  CentosPlus:
+    file: CentOS-Base
+    enabled: "{{ centos_centosplus_enabled }}"
+    baseurl: "file:///vagrant/repo/centosplus/"
+  CR:
+    file: CentOS-CR
+    enabled: "{{ centos_cr_enabled }}"
+    baseurl: "http://sumberterbuka.beritagar.id/centos/$releasever/cr/$basearch/"
+  Fasttrack:
+    file: CentOS-fasttrack
+    enabled: "{{ centos_fasttrack_enabled }}"
+    baseurl: "http://sumberterbuka.beritagar.id/centos/$releasever/fasttrack/$basearch/"
