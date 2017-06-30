@@ -1,7 +1,7 @@
 ---
-centos_base_baseurl:              file:///vagrant/repo/base/
-centos_updates_baseurl:           file:///vagrant/repo/updates/
-centos_extras_baseurl:            file:///vagrant/repo/extras/
-centos_centosplus_baseurl:        file:///vagrant/repo/centosplus/
-centos_cr_baseurl:                http://sumberterbuka.beritagar.id/centos/$releasever/cr/$basearch/
-centos_fasttrack_baseurl:         http://sumberterbuka.beritagar.id/centos/$releasever/fasttrack/$basearch/
+centos_base_baseurl:              "file:///vagrant/repo/base/"
+centos_updates_baseurl:           "file:///vagrant/repo/updates/"
+centos_extras_baseurl:            "file:///vagrant/repo/extras/"
+centos_centosplus_baseurl:        "file:///vagrant/repo/centosplus/"
+centos_cr_baseurl:                "http://sumberterbuka.beritagar.id/centos/$releasever/cr/$basearch/"
+centos_fasttrack_baseurl:         "http://sumberterbuka.beritagar.id/centos/$releasever/fasttrack/$basearch/"

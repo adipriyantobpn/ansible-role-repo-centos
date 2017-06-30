@@ -16,7 +16,7 @@ Available variables are listed below, along with default values (see `defaults/m
 
 ```yaml
 ---
-repo_location:              indonesia   # available options: international, indonesia, vagrant
+repo_location:              indonesia   # available options: international, indonesia, klog, vagrant
 centos_base_enabled:        yes
 centos_updates_enabled:     yes
 centos_extras_enabled:      yes

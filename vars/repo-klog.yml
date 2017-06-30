@@ -1,6 +1,6 @@
 ---
 centos_base_baseurl:              "http://sumberterbuka.beritagar.id/centos/$releasever/os/$basearch/"
-centos_updates_baseurl:           "http://sumberterbuka.beritagar.id/centos/$releasever/updates/$basearch/"
+centos_updates_baseurl:           "http://integrator.kamadjaja.com/repo/updates/"
 centos_extras_baseurl:            "http://sumberterbuka.beritagar.id/centos/$releasever/extras/$basearch/"
 centos_centosplus_baseurl:        "http://sumberterbuka.beritagar.id/centos/$releasever/centosplus/$basearch/"
 centos_cr_baseurl:                "http://sumberterbuka.beritagar.id/centos/$releasever/cr/$basearch/"
