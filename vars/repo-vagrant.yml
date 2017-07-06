@@ -6,19 +6,19 @@ centos_repo:
   Base:
     file: CentOS-Base
     enabled: "{{ centos_base_enabled }}"
-    baseurl: "file:///vagrant/repo/base/"
+    baseurl: "{{ vagrant_repo_base_dir }}base/"
   Updates:
     file: CentOS-Base
     enabled: "{{ centos_updates_enabled }}"
-    baseurl: "file:///vagrant/repo/updates/"
+    baseurl: "{{ vagrant_repo_base_dir }}updates/"
   Extras:
     file: CentOS-Base
     enabled: "{{ centos_extras_enabled }}"
-    baseurl: "file:///vagrant/repo/extras/"
+    baseurl: "{{ vagrant_repo_base_dir }}extras/"
   CentosPlus:
     file: CentOS-Base
     enabled: "{{ centos_centosplus_enabled }}"
-    baseurl: "file:///vagrant/repo/centosplus/"
+    baseurl: "{{ vagrant_repo_base_dir }}centosplus/"
   CR:
     file: CentOS-CR
     enabled: "{{ centos_cr_enabled }}"

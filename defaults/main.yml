@@ -1,6 +1,7 @@
 ---
 # defaults file for adipriyantobpn.repo-centos
 repo_location:              indonesia   # available options: international, indonesia, klog, vagrant
+vagrant_repo_base_dir:      "file:///vagrantshare/repo/"
 centos_base_enabled:        yes
 centos_updates_enabled:     yes
 centos_extras_enabled:      yes
